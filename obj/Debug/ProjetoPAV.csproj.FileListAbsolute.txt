@@ -1,0 +1,10 @@
+C:\Users\Ale Kronemberg\Desktop\PAV\PavPDV\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Ale Kronemberg\Desktop\PAV\PavPDV\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Ale Kronemberg\Desktop\PAV\PavPDV\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Ale Kronemberg\Desktop\PAV\PavPDV\obj\Debug\ProjetoPAV.csprojResolveAssemblyReference.cache
+C:\Users\Ale Kronemberg\Desktop\PAV\PavPDV\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\Ale Kronemberg\Desktop\PAV\PavPDV\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Ale Kronemberg\Desktop\PAV\PavPDV\obj\Debug\ProjetoPAV.csproj.GenerateResource.cache
+C:\Users\Ale Kronemberg\Desktop\PAV\PavPDV\obj\Debug\ProjetoPAV.csproj.CoreCompileInputs.cache
+C:\Users\Ale Kronemberg\Desktop\PAV\PavPDV\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Ale Kronemberg\Desktop\PAV\PavPDV\obj\Debug\WindowsFormsApp1.pdb
