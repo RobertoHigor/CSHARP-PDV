@@ -1,6 +1,6 @@
-﻿namespace WindowsFormsApp1
+﻿namespace ProjetoPAV
 {
-    partial class Form1
+    partial class TelaLogin
     {
         /// <summary>
         /// Required designer variable.

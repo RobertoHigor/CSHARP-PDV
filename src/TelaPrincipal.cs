@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace ProjetoPAV
 {
-    public partial class TelaLogin : Form
+    public partial class TelaPrincipal : Form
     {
-        public TelaLogin()
+        public TelaPrincipal()
         {
             InitializeComponent();
         }

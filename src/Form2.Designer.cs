@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace ProjetoPAV
 {
     partial class Form2
     {

@@ -8,3 +8,14 @@ C:\Users\Ale Kronemberg\Desktop\PAV\PavPDV\obj\Debug\ProjetoPAV.csproj.GenerateR
 C:\Users\Ale Kronemberg\Desktop\PAV\PavPDV\obj\Debug\ProjetoPAV.csproj.CoreCompileInputs.cache
 C:\Users\Ale Kronemberg\Desktop\PAV\PavPDV\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Ale Kronemberg\Desktop\PAV\PavPDV\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\higor\Desktop\Arquivos Importantes\Faculdade\4 período\PAV\PdvPav\bin\Debug\ProjetoPAV.exe.config
+C:\Users\higor\Desktop\Arquivos Importantes\Faculdade\4 período\PAV\PdvPav\bin\Debug\ProjetoPAV.exe
+C:\Users\higor\Desktop\Arquivos Importantes\Faculdade\4 período\PAV\PdvPav\bin\Debug\ProjetoPAV.pdb
+C:\Users\higor\Desktop\Arquivos Importantes\Faculdade\4 período\PAV\PdvPav\obj\Debug\ProjetoPAV.TelaPrincipal.resources
+C:\Users\higor\Desktop\Arquivos Importantes\Faculdade\4 período\PAV\PdvPav\obj\Debug\ProjetoPAV.Properties.Resources.resources
+C:\Users\higor\Desktop\Arquivos Importantes\Faculdade\4 período\PAV\PdvPav\obj\Debug\ProjetoPAV.csproj.GenerateResource.cache
+C:\Users\higor\Desktop\Arquivos Importantes\Faculdade\4 período\PAV\PdvPav\obj\Debug\ProjetoPAV.csproj.CoreCompileInputs.cache
+C:\Users\higor\Desktop\Arquivos Importantes\Faculdade\4 período\PAV\PdvPav\obj\Debug\ProjetoPAV.csproj.CopyComplete
+C:\Users\higor\Desktop\Arquivos Importantes\Faculdade\4 período\PAV\PdvPav\obj\Debug\ProjetoPAV.exe
+C:\Users\higor\Desktop\Arquivos Importantes\Faculdade\4 período\PAV\PdvPav\obj\Debug\ProjetoPAV.pdb
+C:\Users\higor\Desktop\Arquivos Importantes\Faculdade\4 período\PAV\PdvPav\obj\Debug\ProjetoPAV.csprojAssemblyReference.cache
