@@ -1,1 +1,68 @@
-nada
+Trabalho
+
+Fazer um PDV (Ponto de Venda) para super mercados.
+Neste programa teremos 3 modos de operaçao, de acordo com o perfil
+dos usuários. (Gerente, Administrador e Operador)
+
+Modulo 1 - Administrador
+   neste modulo o usuario poderá realizar as seguintes operações
+   1. Listar,Filtrar/Pesquisar, Inserir, Alterar, Remover, TrocarSenha e Bloquear Usuarios
+       Dados dos usuarios (Nome, CPF, Login, Senha e Perfil)
+   2. Listar,Filtrar/Pesquisar, Inserir, Alterar, Remover Produtos
+       Dados dos produtos (Codigo inteiro, nome, descriçao, foto, preço)
+
+Modulo 2 - Operador
+   Este modulo serve para realizar as passagens dos produtos de um cliente.
+   para isso, este modulo terá 4 telas
+   
+   1. Tela inicial - fica somente com os botões de iniciar venda e consultar produto
+   2. Tela Final - nesta tela temos a listagem dos produtos comprados, com o preço final, o valor pago pelo cliente  e o valor do troco.
+   3. Tela de consultar produto - neste tela o usuario digita parte do nome, ou do codigo, ou da descricao e os produtos serão filtrados
+      obs: esta tela pode ser a mesma usada no modulo 1, desde que nao permita fazer alteraçoes.
+   4. Tela venda - Ao iniciar venda, esta será apresentada esta tela, onde teremos uma caixa de texto permitindo a digitaçao do codigo do produto, ou clicar no botao para chamar a tela de pesquisa de produto, que retornará o codigo do mesmo.
+        ao indicar o produto, deve aparecer uma foto, bem como o valor unitario, e deve permitir digitar a quantidade, que por padrao virá como 1.
+        confirmando o produto, o sistema irá inseri-lo na lista de produtos, a qualquer momento o produto pode ser removido.
+        nesta mesma tela deve ser apresentado os produtos da lista de compra, bem como o sub-total.
+	    
+Modulo 3 - Gerente
+    este modulo serve para acompanhar o bom andamento do negocio, através dos seguintes relatórios:
+    1. os 10 Produtos mais vendidos em um intervalo de tempo dado
+    2. a lista de operadores e a quantidade de cancelamentos realizados pelo operador ordenados decrescentemente
+    3. Tempo Medio de venda por quantidade, e mostrando por operador o menor tempo por quantidade e o de maior tempo por quantidade     
+    4. total faturado por mes, semana ou dia, em um intervalo dado, quebrado por operador e na ultima linha o somatorio.
+       colunas: Operador, [mes 1, semana1 ou dia1],[mes 2, semana2 ou dia2]....., [mes n, semana n ou dia n], sub-total 
+       na ultima linha temos o somatorio de cada coluna.
+   
+
+Regras:
+mandar por email:mozar.silva@gmail.com
+assunto: trab ist 2018 01 pav
+corpo do email deve ter o nome dos integrantes do trabalho
+ate dia 06 de julho de 2018 até as 23:59 :)
+grupo de no maximo 3 pessoas.
+trabalhos iguais terão a nota final dividida pelo numero de grupos.
+grupos com mais de 3 pessoas, serão considerados como x grupos de 3. ou seja serão subdivididos em grupos de 3. a nota final sera dividida pelo numero de subgrupos de 3
+
+
+Pontuacao:
+   1. inserir, remover, buscar e listar usuários 				1,5
+   2. inserir, remover, buscar e listar produtos 				1,5
+   3. tela de login  								0,5
+   4. tela de splash								0,5
+   5. telas personalizadas							2,5
+   6. banco de dados embarcado sqlite						2,0
+   7. Tela inicial   (modulo 2 - operador)					1,0
+   8. Tela de venda  (modulo 2 - operador)					1,0
+   9. Tela de consultar produto (modulo 2 - operador)				0.5
+   10.Tela final (modulo 2 - operador)						0.5
+   11.relatorio dos top 10 Produtos (modulo 3 - gerente)			0.5
+   12.relatorio de cancelamentos (modulo 3 - gerente)				0.5					1,0
+   13.relatorio de performance (modulo 3 - gerente)				1,0 
+   14.relatorio de faturamento 							1.5
+   15.usar arquivo para importar e exportar lista de compra			1.0
+   16.usar arquivo para importar e exportar os produtos				1.0
+   17.guardar as imagens no banco de dados 					1.0
+                                                                               18.0
+obs: para qualquer ponto ser validado, pelo menos o item 2 deve estar ok
+     e o sistema deve ser consistente.
+ 
