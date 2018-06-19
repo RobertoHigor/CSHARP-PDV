@@ -41,12 +41,12 @@ namespace ProjetoPAV
                     cmd.ExecuteNonQuery();
 
                     cmd.CommandText = "CREATE TABLE Pedido (" +
-                        "idPedido INT NOT NULL AUTO_INCREMENT," +
+                        "idPedido INT AUTO_INCREMENT," +
                         "login VARCHAR(30) NOT NULL," +
                         "codProduto INT NOT NULL," +
                         "quantidade VARCHAR(45) NOT NULL," +
                         "PRIMARY KEY(idPedido)); ";
-
+                
                     cmd.ExecuteNonQuery();
                     //Criar tabela de compra associando operador e produtos
                     //ver como vai ser feito a lista de cancelamentos (botão de remover uma compra ja feita?)
