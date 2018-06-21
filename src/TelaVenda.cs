@@ -5,24 +5,23 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjetoPAV
+namespace ProjetoPAV.src
 {
-    public partial class TelaLogin : Form
+    public partial class TelaVenda : Form
     {
-        public TelaLogin()
+        public TelaVenda()
         {
             InitializeComponent();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

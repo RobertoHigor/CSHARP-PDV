@@ -5,16 +5,20 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjetoPAV
+namespace ProjetoPAV.src
 {
-    public partial class TelaPrincipal : Form
+    public partial class TelaConsulta : Form
     {
-        public TelaPrincipal()
+        public TelaConsulta()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

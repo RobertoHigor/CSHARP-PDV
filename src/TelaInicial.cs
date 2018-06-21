@@ -10,19 +10,34 @@ using System.Windows.Forms;
 
 namespace ProjetoPAV
 {
-    public partial class TelaLogin : Form
+    public partial class TelaPrincipal : Form
     {
-        public TelaLogin()
+        public TelaPrincipal()
         {
             InitializeComponent();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void TelaPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }
