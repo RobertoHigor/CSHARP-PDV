@@ -14,9 +14,10 @@ namespace ProjetoPAV
         [STAThread]
         static void Main()
         {
+            SQLiteBD bd = new SQLiteBD();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TelaPrincipal());
+            Application.Run(new TelaLogin());
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoPAV.src.Classes;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
@@ -21,75 +22,94 @@ namespace ProjetoPAV
                 conexao.Open();
                 using (IDbCommand cmd = conexao.CreateCommand())
                 {
-                    cmd.CommandText = "create table produto(" +
-                                "codigo INT not null," +
-                                "nome VARCHAR(30) NOT NULL," +
-                                "descrição VARCHAR(100) NULL," +
-                                "preço FLOAT NOT NULL);" +
-
-                                "create table Usuario(" +
-                                "nome varchar(100) not null," +
-                                "CPF varchar(15) not null," +
-                                "login varchar(30) not null," +
-                                "senha varchar(30) not null," +
-                                "perfil varchar(15) not null);" +
-
-                                //Criar tabela de compra associando operador e produtos
-                                //ver como vai ser feito a lista de cancelamentos (botão de remover uma compra ja feita?)
-
+                    cmd.CommandText = "CREATE TABLE Usuario (" +
+                        "login VARCHAR(30) NOT NULL," +
+                        "senha VARCHAR(30) NOT NULL," +
+                        "nome VARCHAR(100) NOT NULL," +
+                        "tipo CHAR(1) NOT NULL," +
+                        "CPF INT NOT NULL," +
+                        "PRIMARY KEY(login, CPF)); ";                   
                     cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = "CREATE TABLE Produto (" +
+                        "codProduto INT NOT NULL," +
+                        "nome VARCHAR(30) NOT NULL," +
+                        "descricao VARCHAR(100) NULL," +
+                        "preco FLOAT NOT NULL," +
+                        "quantidade INT NOT NULL," +                        
+                        "PRIMARY KEY(codProduto));";
+                    cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = "CREATE TABLE Pedido (" +
+                        "idPedido INT AUTO_INCREMENT," +
+                        "login VARCHAR(30) NOT NULL," +
+                        "codProduto INT NOT NULL," +
+                        "quantidade VARCHAR(45) NOT NULL," +
+                        "PRIMARY KEY(idPedido)); ";
+                
+                    cmd.ExecuteNonQuery();
+                    //Criar tabela de compra associando operador e produtos
+                    //ver como vai ser feito a lista de cancelamentos (botão de remover uma compra ja feita?)
+
                 }
                 conexao.Close();
             }
         }
 
-        /*public ICollection<Disciplina> obterDisciplinas()
+        //Obter as disciplinas
+        public ICollection<Produto> obterDisciplinas()
         {
-            List<Produtos> L = new List<Produtos>();
+            List<Produto> L = new List<Produto>();
             using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
             {
                 conexao.Open();
                 using (IDbCommand cmd = conexao.CreateCommand())
                 {
-                    cmd.CommandText = "select Nome, Nota1, Nota2 from Disciplina order by nome";
+                    cmd.CommandText = "select codProduto, nome, descricao, preco, quantidade from Produto order by nome";
                     IDataReader r = cmd.ExecuteReader();
                     while (r.Read())
                     {
-                        Disciplina d = new Disciplina();
-                        d.Nome = r.GetString(0);
-                        d.Nota1 = r.GetFloat(1);
-                        d.Nota2 = r.GetFloat(2);
-                        L.Add(d);
+                        Produto p = new Produto();
+                        p.CodProduto = r.GetInt32(0);
+                        p.Nome = r.GetString(1);
+                        p.Descricao = r.GetString(2);
+                        p.Preco = r.GetFloat(3);
+                        p.Quantidade = r.GetInt32(4);
+                        L.Add(p);
                     }
                 }
                 conexao.Close();
             }
             return L;
         }
-        public Disciplina obterDisciplina(string Nome)
+        
+        public Produto obterDisciplina(string codProduto)
         {
-            Disciplina D = null;
+            Produto p = null;
             using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
             {
                 conexao.Open();
                 using (IDbCommand cmd = conexao.CreateCommand())
                 {
-                    cmd.CommandText = "select Nome, Nota1, Nota2 from Disciplina where nome=@nome";
+                    cmd.CommandText = "select codProduto, nome, descricao, preco, quantidade from Produto WHERE codProduto=@codProduto";
                     cmd.Prepare();
-                    addParametro(cmd, "@Nome", Nome);
+                    addParametro(cmd, "@codProduto", codProduto);
                     IDataReader r = cmd.ExecuteReader();
                     if (r.Read())
                     {
-                        D = new Disciplina();
-                        D.Nome = r.GetString(0);
-                        D.Nota1 = r.GetFloat(1);
-                        D.Nota2 = r.GetFloat(2);
+                        p = new Produto();
+                        p.CodProduto = r.GetInt32(0);
+                        p.Nome = r.GetString(1);
+                        p.Descricao = r.GetString(2);
+                        p.Preco = r.GetFloat(3);
+                        p.Quantidade = r.GetInt32(4);
                     }
                 }
                 conexao.Close();
             }
-            return D;
+            return p;
         }
+        
         private void addParametro(IDbCommand cmd, String Campo, object valor)
         {
             IDbDataParameter param = cmd.CreateParameter();
@@ -97,6 +117,8 @@ namespace ProjetoPAV
             param.Value = valor;
             cmd.Parameters.Add(param);
         }
+        
+        /*
         public void inserir(Disciplina D)
         {
             using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
