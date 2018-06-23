@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ProjetoPAV.src;
+using System;
 using System.Windows.Forms;
 
 namespace ProjetoPAV
@@ -17,6 +15,8 @@ namespace ProjetoPAV
             SQLiteBD bd = new SQLiteBD();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            
+            //Executar a tela de login
             Application.Run(new TelaLogin());
         }
     }

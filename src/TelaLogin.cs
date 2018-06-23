@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoPAV.src;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,13 @@ namespace ProjetoPAV
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            // Esconder janela login
+            this.Hide();
+            // Iniciar a execução da tela venda
+            TelaVenda venda = new TelaVenda();
+            venda.ShowDialog();
+            // Fechar a tela de login após fechar a tela venda
+            this.Close();
         }
     }
 }

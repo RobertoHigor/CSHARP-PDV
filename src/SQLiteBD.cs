@@ -56,8 +56,20 @@ namespace ProjetoPAV
             }
         }
 
-        //Obter as disciplinas
-        public ICollection<Produto> obterDisciplinas()
+        private void addParametro(IDbCommand cmd, String Campo, object valor)
+        {
+            IDbDataParameter param = cmd.CreateParameter();
+            param.ParameterName = Campo;
+            param.Value = valor;
+            cmd.Parameters.Add(param);
+        }
+
+        /*
+         * 
+         * Produto
+         * 
+         */
+        public ICollection<Produto> ObterProdutos()
         {
             List<Produto> L = new List<Produto>();
             using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
@@ -83,7 +95,7 @@ namespace ProjetoPAV
             return L;
         }
         
-        public Produto obterDisciplina(string codProduto)
+        /*public Produto obterDisciplina(string codProduto)
         {
             Produto p = null;
             using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
@@ -108,35 +120,48 @@ namespace ProjetoPAV
                 conexao.Close();
             }
             return p;
-        }
-        
-        private void addParametro(IDbCommand cmd, String Campo, object valor)
-        {
-            IDbDataParameter param = cmd.CreateParameter();
-            param.ParameterName = Campo;
-            param.Value = valor;
-            cmd.Parameters.Add(param);
-        }
-        
-        /*
-        public void inserir(Disciplina D)
+        }*/
+
+        public void alterarProduto(string Nome, Produto p)
         {
             using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
             {
                 conexao.Open();
                 using (IDbCommand cmd = conexao.CreateCommand())
                 {
-                    cmd.CommandText = "insert into disciplina (Nome, Nota1, Nota2) values (@Nome, @Nota1, @Nota2)";
+                    cmd.CommandText = "update produto set CodProduto=@CodProduto, Nome=@Nome, Descricao=@Descricao, Preco=@Preco, Quantidade=@Quantidade where CodProduto=@CodProdutoAntigo";
                     cmd.Prepare();
-                    addParametro(cmd, "@Nome", D.Nome);
-                    addParametro(cmd, "@Nota1", D.Nota1);
-                    addParametro(cmd, "@Nota2", D.Nota2);
+                    addParametro(cmd, "@CodProduto", p.CodProduto);
+                    addParametro(cmd, "@Nome", p.Nome);
+                    addParametro(cmd, "@Descricao", p.Descricao);
+                    addParametro(cmd, "@Preco", p.Preco);
+                    addParametro(cmd, "@Quantidade", p.Quantidade);
+                    cmd.ExecuteNonQuery();
+                }
+                conexao.Close();
+            }
+        }    
+        
+        public void inserirProduto(Produto p)
+        {
+            using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
+            {
+                conexao.Open();
+                using (IDbCommand cmd = conexao.CreateCommand())
+                {
+                    cmd.CommandText = "insert into Produto (codProduto, nome, descricao, preco, quantidade) values (@CodProduto, @Nome, @Descricao, @Preco, @Quantidade)";
+                    cmd.Prepare();
+                    addParametro(cmd, "@CodProduto", p.CodProduto);
+                    addParametro(cmd, "@Nome", p.Nome);
+                    addParametro(cmd, "@Descricao", p.Descricao);
+                    addParametro(cmd, "@Preco", p.Preco);
+                    addParametro(cmd, "@Quantidade", p.Quantidade);
                     cmd.ExecuteNonQuery();
                 }
                 conexao.Close();
             }
         }
-
+        /*
         public void remover(string Nome)
         {
             using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
@@ -165,23 +190,6 @@ namespace ProjetoPAV
                 conexao.Close();
             }
         }
-        public void alterar(string Nome, Disciplina D)
-        {
-            using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
-            {
-                conexao.Open();
-                using (IDbCommand cmd = conexao.CreateCommand())
-                {
-                    cmd.CommandText = "update disciplina set Nome=@Nome, Nota1=@Nota1, Nota2=@Nota2 where Nome=@NomeAntigo";
-                    cmd.Prepare();
-                    addParametro(cmd, "@Nome", D.Nome);
-                    addParametro(cmd, "@Nota1", D.Nota1);
-                    addParametro(cmd, "@Nota2", D.Nota2);
-                    addParametro(cmd, "@NomeAntigo", Nome);
-                    cmd.ExecuteNonQuery();
-                }
-                conexao.Close();
-            }
-        }*/
+        */
     }
 }
