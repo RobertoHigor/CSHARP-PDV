@@ -25,5 +25,28 @@ namespace ProjetoPAV.src
         {
 
         }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //Botão Remover
+        private void button3_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {    
+            //Abrir tela de consulta
+            TelaConsulta consulta = new TelaConsulta();
+            consulta.ShowDialog();      
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

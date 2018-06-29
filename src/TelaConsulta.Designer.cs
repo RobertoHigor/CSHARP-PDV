@@ -28,55 +28,101 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaConsulta));
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.tbxFiltro = new System.Windows.Forms.TextBox();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.lvwProdutos = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 18);
+            this.label1.Location = new System.Drawing.Point(9, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(264, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Digite parte do nome, codigo ou descricao do produto:";
             // 
-            // textBox1
+            // tbxFiltro
             // 
-            this.textBox1.Location = new System.Drawing.Point(275, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(290, 20);
-            this.textBox1.TabIndex = 2;
+            this.tbxFiltro.Location = new System.Drawing.Point(275, 18);
+            this.tbxFiltro.Name = "tbxFiltro";
+            this.tbxFiltro.Size = new System.Drawing.Size(290, 20);
+            this.tbxFiltro.TabIndex = 2;
             // 
-            // listBox1
+            // btnConsultar
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 51);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(634, 290);
-            this.listBox1.TabIndex = 7;
+            this.btnConsultar.Location = new System.Drawing.Point(571, 18);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultar.TabIndex = 4;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // button2
+            // contextMenuStrip1
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(573, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(68, 42);
-            this.button2.TabIndex = 8;
-            this.button2.UseVisualStyleBackColor = true;
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // lvwProdutos
+            // 
+            this.lvwProdutos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+            this.lvwProdutos.FullRowSelect = true;
+            this.lvwProdutos.GridLines = true;
+            this.lvwProdutos.Location = new System.Drawing.Point(28, 86);
+            this.lvwProdutos.Name = "lvwProdutos";
+            this.lvwProdutos.Size = new System.Drawing.Size(663, 185);
+            this.lvwProdutos.TabIndex = 5;
+            this.lvwProdutos.UseCompatibleStateImageBehavior = false;
+            this.lvwProdutos.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "#";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "codProduto";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Nome";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Descrição";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Preço";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Quantidade";
             // 
             // TelaConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 346);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(766, 337);
+            this.Controls.Add(this.lvwProdutos);
+            this.Controls.Add(this.btnConsultar);
+            this.Controls.Add(this.tbxFiltro);
             this.Controls.Add(this.label1);
             this.Name = "TelaConsulta";
             this.Text = "Consultar Produtos";
@@ -88,8 +134,15 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox tbxFiltro;
+        private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ListView lvwProdutos;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }
