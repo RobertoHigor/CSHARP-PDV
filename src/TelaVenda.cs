@@ -48,5 +48,10 @@ namespace ProjetoPAV.src
         {
 
         }
+
+        private void LvwConsulta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
