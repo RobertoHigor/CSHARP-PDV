@@ -31,7 +31,7 @@ namespace ProjetoPAV.src
         private bool PassaFiltro(Produto p, string filtro)
         {
             // retornar os produtos que contem o código ou o nome do filtro
-            return p.CodProduto.ToString().Contains(filtro) || p.Nome.Trim().Contains(filtro);
+            return p.CodProduto.ToString().Contains(filtro) || p.Nome.Trim().Contains(filtro) ||p.Descricao.Trim().Contains(filtro);
         }
 
         private void AtualizarTela()
@@ -46,9 +46,11 @@ namespace ProjetoPAV.src
             {
                 if (string.IsNullOrEmpty(filtro) || PassaFiltro(p, filtro))
                 {
-                    ListViewItem item = new ListViewItem();
-                    item.Text = Linha.ToString();
-                    item.Tag = p;
+                    ListViewItem item = new ListViewItem
+                    {
+                        Text = Linha.ToString(),
+                        Tag = p
+                    };
 
                     //Add as colunas do item
                     item.SubItems.Add(p.CodProduto.ToString());

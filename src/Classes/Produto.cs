@@ -35,7 +35,7 @@ namespace ProjetoPAV.src.Classes
         // Executar o método da classe SQLite para alterar um produto
         public void AlterarProduto(string codProduto, Produto p)
         {
-            bd.alterarProduto(codProduto, p);
+            bd.AlterarProduto(codProduto, p);
         }
     }
 }

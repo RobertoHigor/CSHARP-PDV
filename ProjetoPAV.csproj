@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Classes\Usuario.cs" />
     <Compile Include="src\Classes\Produto.cs" />
     <Compile Include="src\SQLiteBD.cs" />
     <Compile Include="src\TelaConsulta.cs">
@@ -98,6 +99,9 @@
     </Compile>
     <EmbeddedResource Include="src\TelaFinal.resx">
       <DependentUpon>TelaFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\TelaLogin.resx">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\TelaVenda.resx">
       <DependentUpon>TelaVenda.cs</DependentUpon>

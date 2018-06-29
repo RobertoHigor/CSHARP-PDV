@@ -125,6 +125,7 @@
             this.Controls.Add(this.tbxFiltro);
             this.Controls.Add(this.label1);
             this.Name = "TelaConsulta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Produtos";
             this.ResumeLayout(false);
             this.PerformLayout();

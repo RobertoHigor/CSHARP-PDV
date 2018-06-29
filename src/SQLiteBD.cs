@@ -56,12 +56,46 @@ namespace ProjetoPAV
             }
         }
 
-        private void addParametro(IDbCommand cmd, String Campo, object valor)
+        private void AddParametro(IDbCommand cmd, String Campo, object valor)
         {
             IDbDataParameter param = cmd.CreateParameter();
             param.ParameterName = Campo;
             param.Value = valor;
             cmd.Parameters.Add(param);
+        }
+
+        /*
+         * 
+         * Usuário
+         * 
+         */
+
+        public Usuario Logar(string login, string senha)
+        {
+            Usuario u = null;
+            using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
+            {
+                conexao.Open();
+                using (IDbCommand cmd = conexao.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT login, senha, tipo FROM Usuario WHERE login = @login and senha = @senha";
+                    cmd.Prepare();
+                    AddParametro(cmd, "@login", login);
+                    AddParametro(cmd, "@senha", senha);
+                    IDataReader r = cmd.ExecuteReader();
+                    if (r.Read())
+                    {
+                        u = new Usuario
+                        {
+                            Login = r.GetString(0),
+                            Senha = r.GetString(1),
+                            Tipo = Convert.ToChar(r.GetString(2)),
+                        };
+                    }          
+                }
+                conexao.Close();
+            }
+            return u;
         }
 
         /*
@@ -81,12 +115,14 @@ namespace ProjetoPAV
                     IDataReader r = cmd.ExecuteReader();
                     while (r.Read())
                     {
-                        Produto p = new Produto();
-                        p.CodProduto = r.GetInt32(0);
-                        p.Nome = r.GetString(1);
-                        p.Descricao = r.GetString(2);
-                        p.Preco = r.GetFloat(3);
-                        p.Quantidade = r.GetInt32(4);
+                        Produto p = new Produto
+                        {
+                            CodProduto = r.GetInt32(0),
+                            Nome = r.GetString(1),
+                            Descricao = r.GetString(2),
+                            Preco = r.GetFloat(3),
+                            Quantidade = r.GetInt32(4)
+                        };
                         L.Add(p);
                     }
                 }
@@ -122,7 +158,7 @@ namespace ProjetoPAV
             return p;
         }*/
 
-        public void alterarProduto(string Nome, Produto p)
+        public void AlterarProduto(string Nome, Produto p)
         {
             using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
             {
@@ -131,18 +167,18 @@ namespace ProjetoPAV
                 {
                     cmd.CommandText = "update produto set CodProduto=@CodProduto, Nome=@Nome, Descricao=@Descricao, Preco=@Preco, Quantidade=@Quantidade where CodProduto=@CodProdutoAntigo";
                     cmd.Prepare();
-                    addParametro(cmd, "@CodProduto", p.CodProduto);
-                    addParametro(cmd, "@Nome", p.Nome);
-                    addParametro(cmd, "@Descricao", p.Descricao);
-                    addParametro(cmd, "@Preco", p.Preco);
-                    addParametro(cmd, "@Quantidade", p.Quantidade);
+                    AddParametro(cmd, "@CodProduto", p.CodProduto);
+                    AddParametro(cmd, "@Nome", p.Nome);
+                    AddParametro(cmd, "@Descricao", p.Descricao);
+                    AddParametro(cmd, "@Preco", p.Preco);
+                    AddParametro(cmd, "@Quantidade", p.Quantidade);
                     cmd.ExecuteNonQuery();
                 }
                 conexao.Close();
             }
         }    
         
-        public void inserirProduto(Produto p)
+        public void InserirProduto(Produto p)
         {
             using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
             {
@@ -151,11 +187,11 @@ namespace ProjetoPAV
                 {
                     cmd.CommandText = "insert into Produto (codProduto, nome, descricao, preco, quantidade) values (@CodProduto, @Nome, @Descricao, @Preco, @Quantidade)";
                     cmd.Prepare();
-                    addParametro(cmd, "@CodProduto", p.CodProduto);
-                    addParametro(cmd, "@Nome", p.Nome);
-                    addParametro(cmd, "@Descricao", p.Descricao);
-                    addParametro(cmd, "@Preco", p.Preco);
-                    addParametro(cmd, "@Quantidade", p.Quantidade);
+                    AddParametro(cmd, "@CodProduto", p.CodProduto);
+                    AddParametro(cmd, "@Nome", p.Nome);
+                    AddParametro(cmd, "@Descricao", p.Descricao);
+                    AddParametro(cmd, "@Preco", p.Preco);
+                    AddParametro(cmd, "@Quantidade", p.Quantidade);
                     cmd.ExecuteNonQuery();
                 }
                 conexao.Close();
