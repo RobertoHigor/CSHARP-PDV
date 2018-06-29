@@ -40,8 +40,12 @@
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.button4 = new System.Windows.Forms.Button();
+            this.LvwConsulta = new System.Windows.Forms.ListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -55,14 +59,14 @@
             // 
             // txtCodProduto
             // 
-            this.txtCodProduto.Location = new System.Drawing.Point(105, 23);
+            this.txtCodProduto.Location = new System.Drawing.Point(8, 44);
             this.txtCodProduto.Name = "txtCodProduto";
             this.txtCodProduto.Size = new System.Drawing.Size(98, 20);
             this.txtCodProduto.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(8, 372);
+            this.button1.Location = new System.Drawing.Point(8, 106);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 23);
             this.button1.TabIndex = 3;
@@ -74,7 +78,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(464, 361);
+            this.label3.Location = new System.Drawing.Point(464, 359);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 18);
             this.label3.TabIndex = 6;
@@ -145,7 +149,7 @@
             this.button3.BackColor = System.Drawing.Color.Silver;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Red;
-            this.button3.Location = new System.Drawing.Point(15, 308);
+            this.button3.Location = new System.Drawing.Point(8, 308);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(160, 35);
             this.button3.TabIndex = 16;
@@ -153,20 +157,9 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // listView1
-            // 
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(284, 25);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(504, 318);
-            this.listView1.TabIndex = 17;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(209, 23);
+            this.button4.Location = new System.Drawing.Point(119, 44);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(69, 23);
             this.button4.TabIndex = 18;
@@ -174,13 +167,52 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // LvwConsulta
+            // 
+            this.LvwConsulta.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+            this.LvwConsulta.FullRowSelect = true;
+            this.LvwConsulta.GridLines = true;
+            this.LvwConsulta.HideSelection = false;
+            this.LvwConsulta.Location = new System.Drawing.Point(235, 28);
+            this.LvwConsulta.Name = "LvwConsulta";
+            this.LvwConsulta.Size = new System.Drawing.Size(553, 315);
+            this.LvwConsulta.TabIndex = 19;
+            this.LvwConsulta.TileSize = new System.Drawing.Size(1, 1);
+            this.LvwConsulta.UseCompatibleStateImageBehavior = false;
+            this.LvwConsulta.View = System.Windows.Forms.View.Details;
+            this.LvwConsulta.SelectedIndexChanged += new System.EventHandler(this.LvwConsulta_SelectedIndexChanged);
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "#";
+            this.columnHeader3.Width = 26;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Codigo";
+            this.columnHeader4.Width = 140;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Nome";
+            this.columnHeader5.Width = 113;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Descricao";
+            this.columnHeader6.Width = 269;
+            // 
             // TelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 397);
+            this.Controls.Add(this.LvwConsulta);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtQuantidade);
@@ -214,7 +246,11 @@
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ListView LvwConsulta;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }
