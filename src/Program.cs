@@ -15,8 +15,9 @@ namespace ProjetoPAV
             SQLiteBD bd = new SQLiteBD();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
+
             //Executar a tela de login
+            TelaSplash.Executar(1000);
             Application.Run(new TelaLogin());
         }
     }
