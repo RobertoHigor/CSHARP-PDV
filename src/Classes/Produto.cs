@@ -37,5 +37,10 @@ namespace ProjetoPAV.src.Classes
         {
             bd.AlterarProduto(codProduto, p);
         }
+
+        public void Remover(int codProduto)
+        {
+            bd.RemoverProduto(codProduto);
+        }
     }
 }

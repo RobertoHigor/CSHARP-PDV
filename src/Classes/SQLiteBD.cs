@@ -98,6 +98,13 @@ namespace ProjetoPAV
             return u;
         }
 
+        public  ICollection<Usuario> ObterUsuarios()
+        {
+            List<Usuario> L = new List<Usuario>();
+            return L;
+        }
+
+
         /*
          * 
          * Produto
@@ -129,6 +136,22 @@ namespace ProjetoPAV
                 conexao.Close();
             }
             return L;
+        }
+
+        public void RemoverProduto(int CodProduto)
+        {
+            using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
+            {
+                conexao.Open();
+                using (IDbCommand cmd = conexao.CreateCommand())
+                {
+                    cmd.CommandText = "DELETE FROM produto WHERE codProduto=@CodProduto";
+                    cmd.Prepare();
+                    AddParametro(cmd, "@CodProduto", CodProduto);
+                    cmd.ExecuteNonQuery();
+                }
+                conexao.Close();
+            }
         }
         
         /*public Produto obterDisciplina(string codProduto)

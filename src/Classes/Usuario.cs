@@ -29,5 +29,15 @@ namespace ProjetoPAV.src.Classes
         {
             return bd.Logar(login, usuario);
         }
+
+        public ICollection<Usuario> ObterUsuarios()
+        {
+            return bd.ObterUsuarios();
+        }
+
+        public void Remover(string login)
+        {
+            //bd.RemoverUsuario(login);
+        }
     }
 }

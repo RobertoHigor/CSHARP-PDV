@@ -63,7 +63,7 @@
     <Compile Include="src\TelaSplash.Designer.cs">
       <DependentUpon>TelaSplash.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\SQLiteBD.cs" />
+    <Compile Include="src\Classes\SQLiteBD.cs" />
     <Compile Include="src\TelaConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +90,12 @@
     <Compile Include="src\TelaVenda.Designer.cs">
       <DependentUpon>TelaVenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\TelaAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\TelaAdmin.Designer.cs">
+      <DependentUpon>TelaAdmin.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="src\TelaSplash.resx">
       <DependentUpon>TelaSplash.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\TelaVenda.resx">
       <DependentUpon>TelaVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\TelaAdmin.resx">
+      <DependentUpon>TelaAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
