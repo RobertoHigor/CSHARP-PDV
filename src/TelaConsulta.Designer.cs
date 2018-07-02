@@ -60,7 +60,7 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(571, 18);
+            this.btnConsultar.Location = new System.Drawing.Point(571, 15);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(75, 23);
             this.btnConsultar.TabIndex = 4;
@@ -84,9 +84,9 @@
             this.columnHeader6});
             this.lvwProdutos.FullRowSelect = true;
             this.lvwProdutos.GridLines = true;
-            this.lvwProdutos.Location = new System.Drawing.Point(28, 86);
+            this.lvwProdutos.Location = new System.Drawing.Point(12, 44);
             this.lvwProdutos.Name = "lvwProdutos";
-            this.lvwProdutos.Size = new System.Drawing.Size(663, 185);
+            this.lvwProdutos.Size = new System.Drawing.Size(742, 281);
             this.lvwProdutos.TabIndex = 5;
             this.lvwProdutos.UseCompatibleStateImageBehavior = false;
             this.lvwProdutos.View = System.Windows.Forms.View.Details;
@@ -94,26 +94,32 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "#";
+            this.columnHeader1.Width = 36;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "codProduto";
+            this.columnHeader2.Width = 74;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Nome";
+            this.columnHeader3.Width = 155;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Descrição";
+            this.columnHeader4.Width = 326;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Preço";
+            this.columnHeader5.Width = 72;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Quantidade";
+            this.columnHeader6.Width = 73;
             // 
             // TelaConsulta
             // 

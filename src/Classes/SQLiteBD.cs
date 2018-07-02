@@ -11,8 +11,8 @@ namespace ProjetoPAV
         private const string STR_CONEXAO = "Data Source=dados.bd;Version=3";
         public SQLiteBD()
         {
-            if (!System.IO.File.Exists("dados.bd"))
-                CriarBD();
+            //if (!System.IO.File.Exists("dados.bd"))
+                //CriarBD();
         }
 
         private void CriarBD()
@@ -85,13 +85,10 @@ namespace ProjetoPAV
                     IDataReader r = cmd.ExecuteReader();
                     if (r.Read())
                     {
-                        u = new Usuario
-                        {
-                            Login = r.GetString(0),
-                            Senha = r.GetString(1),
-                            Tipo = Convert.ToChar(r.GetString(2)),
-                        };
-                    }          
+                        u = new Usuario();
+                        u.Tipo = Convert.ToChar(r.GetString(2));                     
+                    }
+                    cmd.Dispose();
                 }
                 conexao.Close();
             }
@@ -103,13 +100,14 @@ namespace ProjetoPAV
             List<Usuario> L = new List<Usuario>();
             return L;
         }
-
-
+        
         /*
          * 
          * Produto
          * 
          */
+
+        // Listar Produtos
         public ICollection<Produto> ObterProdutos()
         {
             List<Produto> L = new List<Produto>();
@@ -138,6 +136,7 @@ namespace ProjetoPAV
             return L;
         }
 
+        // Remover produto
         public void RemoverProduto(int CodProduto)
         {
             using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
@@ -152,36 +151,10 @@ namespace ProjetoPAV
                 }
                 conexao.Close();
             }
-        }
-        
-        /*public Produto obterDisciplina(string codProduto)
-        {
-            Produto p = null;
-            using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
-            {
-                conexao.Open();
-                using (IDbCommand cmd = conexao.CreateCommand())
-                {
-                    cmd.CommandText = "select codProduto, nome, descricao, preco, quantidade from Produto WHERE codProduto=@codProduto";
-                    cmd.Prepare();
-                    addParametro(cmd, "@codProduto", codProduto);
-                    IDataReader r = cmd.ExecuteReader();
-                    if (r.Read())
-                    {
-                        p = new Produto();
-                        p.CodProduto = r.GetInt32(0);
-                        p.Nome = r.GetString(1);
-                        p.Descricao = r.GetString(2);
-                        p.Preco = r.GetFloat(3);
-                        p.Quantidade = r.GetInt32(4);
-                    }
-                }
-                conexao.Close();
-            }
-            return p;
-        }*/
+        }        
 
-        public void AlterarProduto(string Nome, Produto p)
+        // Alterar
+        public void AlterarProduto(int CodProduto, Produto p)
         {
             using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
             {
@@ -195,12 +168,14 @@ namespace ProjetoPAV
                     AddParametro(cmd, "@Descricao", p.Descricao);
                     AddParametro(cmd, "@Preco", p.Preco);
                     AddParametro(cmd, "@Quantidade", p.Quantidade);
+                    AddParametro(cmd, "@CodProdutoAntigo", CodProduto);
                     cmd.ExecuteNonQuery();
                 }
                 conexao.Close();
             }
         }    
         
+        // Inserir Produto
         public void InserirProduto(Produto p)
         {
             using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
@@ -219,36 +194,6 @@ namespace ProjetoPAV
                 }
                 conexao.Close();
             }
-        }
-        /*
-        public void remover(string Nome)
-        {
-            using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
-            {
-                conexao.Open();
-                using (IDbCommand cmd = conexao.CreateCommand())
-                {
-                    cmd.CommandText = "delete from disciplina where Nome=@Nome";
-                    cmd.Prepare();
-                    addParametro(cmd, "@Nome", Nome);
-                    cmd.ExecuteNonQuery();
-                }
-                conexao.Close();
-            }
-        }
-        public void removerTudo()
-        {
-            using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
-            {
-                conexao.Open();
-                using (IDbCommand cmd = conexao.CreateCommand())
-                {
-                    cmd.CommandText = "delete from disciplina";
-                    cmd.ExecuteNonQuery();
-                }
-                conexao.Close();
-            }
-        }
-        */
+        }       
     }
 }

@@ -20,16 +20,13 @@ namespace ProjetoPAV
            
         }
 
-        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtnLogar(object sender, EventArgs e)
         {
+            Usuario u = new Usuario();            
+            u = u.Logar(txtLogin.Text, txtSenha.Text);      
+            //SQLiteBD bd = new SQLiteBD();
+           // char u = bd.Logar(txtLogin.Text, txtSenha.Text);
 
-            Usuario u = new Usuario();
-            u = u.Logar(txtLogin.Text, txtSenha.Text);
             if (u != null)
             {
                 if (u.Tipo == 'o')
@@ -37,22 +34,16 @@ namespace ProjetoPAV
                     // Esconder janela login
                     this.Hide();
                     // Iniciar a execução da tela venda
-                    TelaVenda venda = new TelaVenda();
+                    TelaInicial venda = new TelaInicial();
                     venda.ShowDialog();
                     // Fechar a tela de login após fechar a tela venda
                     this.Close();
-                }else if (u.Tipo == 'g')
-                {
-                    /*this.Hide();
-                    TelaGerente gerente = new TelaGerente();
-                    gerente.ShowDialog();
-                    this.Close();*/
                 }else if (u.Tipo == 'a')
                 {
-                    /*this.Hide();
+                    this.Hide();
                     TelaAdmin admin = new TelaAdmin();
                     admin.ShowDialog();
-                    this.Close();*/
+                    this.Close();
                 }else
                 {
                     MessageBox.Show("Usuário Bloqueado");

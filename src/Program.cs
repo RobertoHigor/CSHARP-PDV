@@ -18,8 +18,8 @@ namespace ProjetoPAV
 
             //Executar a tela de login
             TelaSplash.Executar(1000);
-            //Application.Run(new TelaLogin());
-            Application.Run(new TelaAdmin());
+            Application.Run(new TelaLogin());
+            //Application.Run(new TelaAdmin());
         }
     }
 }

@@ -35,9 +35,9 @@ namespace ProjetoPAV.src.Classes
             return bd.ObterUsuarios();
         }
 
-        public void Remover(string login)
+        public void Remover(string nome)
         {
-            //bd.RemoverUsuario(login);
+            //bd.RemoverUsuario(nome);
         }
     }
 }

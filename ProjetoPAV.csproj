@@ -57,6 +57,30 @@
   <ItemGroup>
     <Compile Include="src\Classes\Usuario.cs" />
     <Compile Include="src\Classes\Produto.cs" />
+    <Compile Include="src\TelaInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\TelaInicial.Designer.cs">
+      <DependentUpon>TelaInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\TelaAdminUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\TelaAdminUsuario.Designer.cs">
+      <DependentUpon>TelaAdminUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\TelaAdminProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\TelaAdminProduto.Designer.cs">
+      <DependentUpon>TelaAdminProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\FrmProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\FrmProduto.Designer.cs">
+      <DependentUpon>FrmProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\TelaSplash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +120,18 @@
     <Compile Include="src\TelaAdmin.Designer.cs">
       <DependentUpon>TelaAdmin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="src\TelaInicial.resx">
+      <DependentUpon>TelaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\FrmProduto.resx">
+      <DependentUpon>FrmProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\TelaAdminProduto.resx">
+      <DependentUpon>TelaAdminProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\TelaAdminUsuario.resx">
+      <DependentUpon>TelaAdminUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\TelaSplash.resx">
       <DependentUpon>TelaSplash.cs</DependentUpon>
     </EmbeddedResource>
