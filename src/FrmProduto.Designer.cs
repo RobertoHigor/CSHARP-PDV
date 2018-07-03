@@ -64,6 +64,7 @@
             // tbxCodProduto
             // 
             this.tbxCodProduto.Location = new System.Drawing.Point(112, 6);
+            this.tbxCodProduto.MaxLength = 9;
             this.tbxCodProduto.Name = "tbxCodProduto";
             this.tbxCodProduto.Size = new System.Drawing.Size(100, 20);
             this.tbxCodProduto.TabIndex = 2;
@@ -107,6 +108,7 @@
             // tbxNome
             // 
             this.tbxNome.Location = new System.Drawing.Point(112, 36);
+            this.tbxNome.MaxLength = 30;
             this.tbxNome.Name = "tbxNome";
             this.tbxNome.Size = new System.Drawing.Size(100, 20);
             this.tbxNome.TabIndex = 7;
@@ -114,6 +116,7 @@
             // tbxDescricao
             // 
             this.tbxDescricao.Location = new System.Drawing.Point(112, 71);
+            this.tbxDescricao.MaxLength = 100;
             this.tbxDescricao.Name = "tbxDescricao";
             this.tbxDescricao.Size = new System.Drawing.Size(330, 20);
             this.tbxDescricao.TabIndex = 8;
@@ -121,6 +124,7 @@
             // tbxPreco
             // 
             this.tbxPreco.Location = new System.Drawing.Point(342, 9);
+            this.tbxPreco.MaxLength = 5;
             this.tbxPreco.Name = "tbxPreco";
             this.tbxPreco.Size = new System.Drawing.Size(100, 20);
             this.tbxPreco.TabIndex = 9;
@@ -128,6 +132,7 @@
             // tbxQuantidade
             // 
             this.tbxQuantidade.Location = new System.Drawing.Point(342, 44);
+            this.tbxQuantidade.MaxLength = 7;
             this.tbxQuantidade.Name = "tbxQuantidade";
             this.tbxQuantidade.Size = new System.Drawing.Size(100, 20);
             this.tbxQuantidade.TabIndex = 10;

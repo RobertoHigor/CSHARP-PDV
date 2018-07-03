@@ -57,6 +57,12 @@
   <ItemGroup>
     <Compile Include="src\Classes\Usuario.cs" />
     <Compile Include="src\Classes\Produto.cs" />
+    <Compile Include="src\FrmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\FrmUsuario.Designer.cs">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\TelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     <Compile Include="src\TelaAdmin.Designer.cs">
       <DependentUpon>TelaAdmin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="src\FrmUsuario.resx">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\TelaInicial.resx">
       <DependentUpon>TelaInicial.cs</DependentUpon>
     </EmbeddedResource>

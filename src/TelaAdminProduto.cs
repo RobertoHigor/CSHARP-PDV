@@ -12,7 +12,7 @@ namespace ProjetoPAV.src
             InitializeComponent();
             p = new Produto();
             tbxProdutoFiltro.Text = "";
-            AtualizarTela();            
+            AtualizarTela();
         }
 
         private void AtualizarTela()
@@ -46,13 +46,13 @@ namespace ProjetoPAV.src
 
                 lvwProdutos.ResumeLayout();
 
-            }       
+            }
         }
 
         private bool PassaFiltro(Produto p, string filtro)
         {
             // retornar os produtos que contem o código ou o nome do filtro
-            return p.CodProduto.ToString().Contains(filtro) || p.Nome.Trim().Contains(filtro) || p.Descricao.Trim().Contains(filtro);
+            return p.CodProduto.ToString().Contains(filtro) || p.Nome.Trim().ToLower().Contains(filtro) || p.Descricao.Trim().ToLower().Contains(filtro);
         }
 
         private void BtnCadastroProduto_Click(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace ProjetoPAV.src
         private void BtnProdutoAlterar_Click(object sender, EventArgs e)
         {
             if (lvwProdutos.SelectedItems.Count == 0)
-                MessageBox.Show("Selecione primeiro o produto a ser removido");
+                MessageBox.Show("Selecione primeiro o produto a ser alterado");
             else if (lvwProdutos.SelectedItems.Count != 1)
                 MessageBox.Show("Selecione somente um produto");
             else
@@ -91,5 +91,24 @@ namespace ProjetoPAV.src
         {
             AtualizarTela();
         }
+
+        private void BtnRemoverProduto_Click(object sender, EventArgs e)
+        {
+            if (lvwProdutos.SelectedItems.Count == 0)
+                MessageBox.Show("Selecione primeiro o produto a ser removido");
+            else if (lvwProdutos.SelectedItems.Count != 1)
+                MessageBox.Show("Selecione somente um produto");
+            else
+            {
+                Produto ficha = (Produto)lvwProdutos.SelectedItems[0].Tag;
+                if (MessageBox.Show("Tem certeza que deseja remover o produto " + ficha.Nome + "?", "Remover", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    p.Remover(ficha.CodProduto);
+                    AtualizarTela();
+                }
+
+            }
+        }
     }
 }
+

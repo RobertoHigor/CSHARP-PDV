@@ -22,14 +22,14 @@ namespace ProjetoPAV
 
         private void BtnLogar(object sender, EventArgs e)
         {
-            Usuario u = new Usuario();            
+            src.Classes.Usuario u = new src.Classes.Usuario();            
             u = u.Logar(txtLogin.Text, txtSenha.Text);      
             //SQLiteBD bd = new SQLiteBD();
            // char u = bd.Logar(txtLogin.Text, txtSenha.Text);
 
             if (u != null)
             {
-                if (u.TipoB == 'o')
+                if (u.Tipo == 'o')
                 {
                     // Esconder janela login
                     this.Hide();
@@ -38,7 +38,7 @@ namespace ProjetoPAV
                     venda.ShowDialog();
                     // Fechar a tela de login após fechar a tela venda
                     this.Close();
-                }else if (u.TipoB == 'a')
+                }else if (u.Tipo == 'a')
                 {
                     this.Hide();
                     TelaAdmin admin = new TelaAdmin();

@@ -11,7 +11,7 @@ namespace ProjetoPAV.src.Classes
         private string senha;
         private string nome;
         private char tipo;
-        private int cpf;
+        private long cpf;
         private SQLiteBD bd;
 
         public Usuario()
@@ -22,8 +22,8 @@ namespace ProjetoPAV.src.Classes
         public string Login { get => login; set => login = value; }
         public string Senha { get => senha; set => senha = value; }
         public string Nome { get => nome; set => nome = value; }
-        public char TipoB { get => tipo; set => tipo = value; }
-        public int CPF { get => cpf; set => cpf = value; }
+        public char Tipo { get => tipo; set => tipo = value; }
+        public long CPF { get => cpf; set => cpf = value; }
 
         public Usuario Logar(string usuario, string login)
         {
@@ -35,17 +35,22 @@ namespace ProjetoPAV.src.Classes
             return bd.ObterUsuarios();
         }
 
+        public void Inserir(Usuario ficha)
+        {
+            bd.InserirUsuario(ficha);
+        }
+
         public void Remover(string nome)
         {
             bd.RemoverUsuario(nome);
         }
-        public void Alterar(string nome)
+        public void Alterar(string login, Usuario u)
         {
-            bd.AlterarUsuario();
+            bd.AlterarUsuario(login, u);
         }
         public void Bloquear(string login)
         {
-            bd.BloquearUsuario();
+            bd.BloquearUsuario(login);
         }
         
     }

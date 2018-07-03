@@ -31,16 +31,16 @@
             this.btnUsuarioAlterar = new System.Windows.Forms.Button();
             this.btnCadastroUsuario = new System.Windows.Forms.Button();
             this.lvwUsuarios = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnBloquearUsuario = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnRemoverUsuario = new System.Windows.Forms.Button();
-            this.tbxProdutoFiltro = new System.Windows.Forms.TextBox();
+            this.tbxUsuarioFiltro = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnUsuarioAlterar
@@ -66,16 +66,16 @@
             // lvwUsuarios
             // 
             this.lvwUsuarios.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader11});
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
             this.lvwUsuarios.FullRowSelect = true;
             this.lvwUsuarios.GridLines = true;
             this.lvwUsuarios.HideSelection = false;
-            this.lvwUsuarios.Location = new System.Drawing.Point(12, 41);
+            this.lvwUsuarios.Location = new System.Drawing.Point(14, 40);
             this.lvwUsuarios.Name = "lvwUsuarios";
             this.lvwUsuarios.Size = new System.Drawing.Size(630, 405);
             this.lvwUsuarios.TabIndex = 30;
@@ -83,35 +83,35 @@
             this.lvwUsuarios.UseCompatibleStateImageBehavior = false;
             this.lvwUsuarios.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "#";
+            this.columnHeader1.Width = 26;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Login";
+            this.columnHeader2.Width = 98;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Senha";
+            this.columnHeader3.Width = 130;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Nome";
+            this.columnHeader4.Width = 199;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Perfil";
+            this.columnHeader5.Width = 46;
+            // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "#";
-            this.columnHeader6.Width = 26;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Nome";
-            this.columnHeader7.Width = 133;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "CPF";
-            this.columnHeader8.Width = 110;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Login";
-            this.columnHeader9.Width = 87;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Senha";
-            this.columnHeader10.Width = 75;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Perfil";
-            this.columnHeader11.Width = 46;
+            this.columnHeader6.Text = "CPF";
+            this.columnHeader6.Width = 121;
             // 
             // btnBloquearUsuario
             // 
@@ -143,19 +143,19 @@
             this.btnRemoverUsuario.UseVisualStyleBackColor = true;
             this.btnRemoverUsuario.Click += new System.EventHandler(this.BtnRemoverUsuario_Click);
             // 
-            // tbxProdutoFiltro
+            // tbxUsuarioFiltro
             // 
-            this.tbxProdutoFiltro.Location = new System.Drawing.Point(409, 14);
-            this.tbxProdutoFiltro.Name = "tbxProdutoFiltro";
-            this.tbxProdutoFiltro.Size = new System.Drawing.Size(233, 20);
-            this.tbxProdutoFiltro.TabIndex = 34;
+            this.tbxUsuarioFiltro.Location = new System.Drawing.Point(409, 14);
+            this.tbxUsuarioFiltro.Name = "tbxUsuarioFiltro";
+            this.tbxUsuarioFiltro.Size = new System.Drawing.Size(233, 20);
+            this.tbxUsuarioFiltro.TabIndex = 34;
             // 
             // TelaAdminUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 451);
-            this.Controls.Add(this.tbxProdutoFiltro);
+            this.Controls.Add(this.tbxUsuarioFiltro);
             this.Controls.Add(this.btnUsuarioAlterar);
             this.Controls.Add(this.btnCadastroUsuario);
             this.Controls.Add(this.lvwUsuarios);
@@ -175,15 +175,15 @@
         private System.Windows.Forms.Button btnUsuarioAlterar;
         private System.Windows.Forms.Button btnCadastroUsuario;
         private System.Windows.Forms.ListView lvwUsuarios;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Button btnBloquearUsuario;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Button btnRemoverUsuario;
-        private System.Windows.Forms.TextBox tbxProdutoFiltro;
+        private System.Windows.Forms.TextBox tbxUsuarioFiltro;
     }
 }
