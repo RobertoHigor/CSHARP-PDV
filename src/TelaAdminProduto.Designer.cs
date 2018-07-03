@@ -39,6 +39,7 @@
             this.btnProdutoPesquisar = new System.Windows.Forms.Button();
             this.btnRemoverProduto = new System.Windows.Forms.Button();
             this.btnCadastroProduto = new System.Windows.Forms.Button();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btnProdutoAlterar
@@ -65,7 +66,8 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5});
+            this.columnHeader5,
+            this.columnHeader6});
             this.lvwProdutos.FullRowSelect = true;
             this.lvwProdutos.GridLines = true;
             this.lvwProdutos.HideSelection = false;
@@ -95,11 +97,11 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Descricao";
-            this.columnHeader4.Width = 308;
+            this.columnHeader4.Width = 237;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "preco";
+            this.columnHeader5.Text = "Preço";
             this.columnHeader5.Width = 63;
             // 
             // btnProdutoPesquisar
@@ -120,6 +122,7 @@
             this.btnRemoverProduto.TabIndex = 27;
             this.btnRemoverProduto.Text = "Remover";
             this.btnRemoverProduto.UseVisualStyleBackColor = true;
+            this.btnRemoverProduto.Click += new System.EventHandler(this.BtnRemoverProduto_Click);
             // 
             // btnCadastroProduto
             // 
@@ -130,6 +133,11 @@
             this.btnCadastroProduto.Text = "Cadastrar";
             this.btnCadastroProduto.UseVisualStyleBackColor = true;
             this.btnCadastroProduto.Click += new System.EventHandler(this.BtnCadastroProduto_Click);
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Quantidade";
+            this.columnHeader6.Width = 72;
             // 
             // TelaAdminProduto
             // 
@@ -163,5 +171,6 @@
         private System.Windows.Forms.Button btnProdutoPesquisar;
         private System.Windows.Forms.Button btnRemoverProduto;
         private System.Windows.Forms.Button btnCadastroProduto;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }

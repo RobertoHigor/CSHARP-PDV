@@ -31,7 +31,7 @@ namespace ProjetoPAV.src
         private bool PassaFiltro(Produto p, string filtro)
         {
             // retornar os produtos que contem o código ou o nome do filtro
-            return p.CodProduto.ToString().Contains(filtro) || p.Nome.Trim().Contains(filtro) ||p.Descricao.Trim().Contains(filtro);
+            return p.CodProduto.ToString().Contains(filtro) || p.Nome.Trim().ToLower().Contains(filtro) ||p.Descricao.Trim().ToLower().Contains(filtro);
         }
 
         private void AtualizarTela()

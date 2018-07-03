@@ -57,7 +57,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(99, 20);
             this.dateTimePicker1.TabIndex = 1;
-            this.dateTimePicker1.Value = new System.DateTime(2018, 6, 28, 0, 0, 0, 0);            
+            this.dateTimePicker1.Value = new System.DateTime(2018, 6, 28, 0, 0, 0, 0);
             // 
             // txtLogin
             // 
@@ -79,6 +79,7 @@
             // 
             this.txtSenha.Location = new System.Drawing.Point(86, 52);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(253, 20);
             this.txtSenha.TabIndex = 5;
             // 
