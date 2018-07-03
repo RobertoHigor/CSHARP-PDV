@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodProduto = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnConsultarProduto = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
@@ -39,8 +39,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnRemoverProduto = new System.Windows.Forms.Button();
+            this.btnAdicionar = new System.Windows.Forms.Button();
             this.LvwConsulta = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -64,15 +64,15 @@
             this.txtCodProduto.Size = new System.Drawing.Size(98, 20);
             this.txtCodProduto.TabIndex = 2;
             // 
-            // button1
+            // btnConsultarProduto
             // 
-            this.button1.Location = new System.Drawing.Point(8, 106);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Consultar produto";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnConsultarProduto.Location = new System.Drawing.Point(8, 106);
+            this.btnConsultarProduto.Name = "btnConsultarProduto";
+            this.btnConsultarProduto.Size = new System.Drawing.Size(98, 23);
+            this.btnConsultarProduto.TabIndex = 3;
+            this.btnConsultarProduto.Text = "Consultar produto";
+            this.btnConsultarProduto.UseVisualStyleBackColor = true;
+            this.btnConsultarProduto.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -144,28 +144,28 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Lista de compras";
             // 
-            // button3
+            // btnRemoverProduto
             // 
-            this.button3.BackColor = System.Drawing.Color.Silver;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Red;
-            this.button3.Location = new System.Drawing.Point(8, 308);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(160, 35);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Remover produto";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnRemoverProduto.BackColor = System.Drawing.Color.Silver;
+            this.btnRemoverProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoverProduto.ForeColor = System.Drawing.Color.Red;
+            this.btnRemoverProduto.Location = new System.Drawing.Point(8, 308);
+            this.btnRemoverProduto.Name = "btnRemoverProduto";
+            this.btnRemoverProduto.Size = new System.Drawing.Size(160, 35);
+            this.btnRemoverProduto.TabIndex = 16;
+            this.btnRemoverProduto.Text = "Remover produto";
+            this.btnRemoverProduto.UseVisualStyleBackColor = false;
+            this.btnRemoverProduto.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // btnAdicionar
             // 
-            this.button4.Location = new System.Drawing.Point(119, 44);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(69, 23);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Adicionar";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnAdicionar.Location = new System.Drawing.Point(119, 44);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(69, 23);
+            this.btnAdicionar.TabIndex = 18;
+            this.btnAdicionar.Text = "Adicionar";
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.button4_Click);
             // 
             // LvwConsulta
             // 
@@ -212,8 +212,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 397);
             this.Controls.Add(this.LvwConsulta);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnAdicionar);
+            this.Controls.Add(this.btnRemoverProduto);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtQuantidade);
             this.Controls.Add(this.label5);
@@ -222,7 +222,7 @@
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnConsultarProduto);
             this.Controls.Add(this.txtCodProduto);
             this.Controls.Add(this.label1);
             this.Name = "TelaVenda";
@@ -236,7 +236,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCodProduto;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnConsultarProduto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtTotal;
@@ -245,8 +245,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnRemoverProduto;
+        private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.ListView LvwConsulta;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;

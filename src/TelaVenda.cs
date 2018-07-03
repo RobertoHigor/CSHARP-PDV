@@ -49,6 +49,15 @@ namespace ProjetoPAV.src
 
         }
 
+        private void AtualizarTela()
+        {
+            LvwConsulta.SuspendLayout();
+
+            
+
+            LvwConsulta.ResumeLayout();
+        }
+
         private void LvwConsulta_SelectedIndexChanged(object sender, EventArgs e)
         {
 

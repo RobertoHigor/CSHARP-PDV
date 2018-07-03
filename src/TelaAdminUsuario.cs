@@ -49,7 +49,7 @@ namespace ProjetoPAV.src
                     itemUsuario.SubItems.Add(usuario.CPF.ToString());
                     itemUsuario.SubItems.Add(usuario.Login.ToLower());
                     itemUsuario.SubItems.Add(usuario.Senha.ToString());
-                    itemUsuario.SubItems.Add(usuario.Tipo.ToString());
+                    itemUsuario.SubItems.Add(usuario.TipoB.ToString());
                 }
             }
         }

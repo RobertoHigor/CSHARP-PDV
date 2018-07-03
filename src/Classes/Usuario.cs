@@ -22,7 +22,7 @@ namespace ProjetoPAV.src.Classes
         public string Login { get => login; set => login = value; }
         public string Senha { get => senha; set => senha = value; }
         public string Nome { get => nome; set => nome = value; }
-        public char Tipo { get => tipo; set => tipo = value; }
+        public char TipoB { get => tipo; set => tipo = value; }
         public int CPF { get => cpf; set => cpf = value; }
 
         public Usuario Logar(string usuario, string login)
@@ -37,7 +37,16 @@ namespace ProjetoPAV.src.Classes
 
         public void Remover(string nome)
         {
-            //bd.RemoverUsuario(nome);
+            bd.RemoverUsuario(nome);
         }
+        public void Alterar(string nome)
+        {
+            bd.AlterarUsuario();
+        }
+        public void Bloquear(string login)
+        {
+            bd.BloquearUsuario();
+        }
+        
     }
 }

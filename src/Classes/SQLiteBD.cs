@@ -56,6 +56,16 @@ namespace ProjetoPAV
             }
         }
 
+        internal void BloquearUsuario()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void AlterarUsuario()
+        {
+            throw new NotImplementedException();
+        }
+
         private void AddParametro(IDbCommand cmd, String Campo, object valor)
         {
             IDbDataParameter param = cmd.CreateParameter();
@@ -86,7 +96,7 @@ namespace ProjetoPAV
                     if (r.Read())
                     {
                         u = new Usuario();
-                        u.Tipo = Convert.ToChar(r.GetString(2));                     
+                        u.TipoB = Convert.ToChar(r.GetString(2));                     
                     }
                     cmd.Dispose();
                 }
@@ -100,7 +110,90 @@ namespace ProjetoPAV
             List<Usuario> L = new List<Usuario>();
             return L;
         }
-        
+
+        //inserir usuário
+        public void InserirUsuario(Usuario u)
+        {
+            using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
+            {
+                conexao.Open();
+                using (IDbCommand cmd = conexao.CreateCommand())
+                {
+                    cmd.CommandText = "insert into Usuario (login, senha, nome, tipo, CPF) values (@Login, @Senha, @Nome, @Tipo, @CPF)";
+                    cmd.Prepare();
+                    AddParametro(cmd, "@Login", u.Login);
+                    AddParametro(cmd, "@Senha", u.Senha);
+                    AddParametro(cmd, "@Nome", u.Nome);
+                    AddParametro(cmd, "@Tipo", u.TipoB);
+                    AddParametro(cmd, "@CPF", u.CPF);
+                    cmd.ExecuteNonQuery();
+                }
+                conexao.Close();
+            }
+        }
+
+        //alterar usuário
+        public void AlterarUsuario(string Login, Usuario u)
+        {
+            using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
+            {
+                conexao.Open();
+                using (IDbCommand cmd = conexao.CreateCommand())
+                {
+                    cmd.CommandText = "update Usuario set Login=@Login, Senha=@Senha, Nome=@nome, Tipo=@tipo, CPF=@CPF where Login=@LoginAntigo";
+                    cmd.Prepare();
+                    AddParametro(cmd, "@Login", u.Login);
+                    AddParametro(cmd, "@Senha", u.Senha);
+                    AddParametro(cmd, "@Nome", u.Nome);
+                    AddParametro(cmd, "@Tipo", u.TipoB);
+                    AddParametro(cmd, "@CPF", u.CPF);
+                    AddParametro(cmd, "@LoginAntigo", Login);
+                    cmd.ExecuteNonQuery();
+                }
+                conexao.Close();
+            }
+        }
+
+        //Remover Usuário
+        public void RemoverUsuario(string nome)
+        {
+            using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
+            {
+                conexao.Open();
+                using (IDbCommand cmd = conexao.CreateCommand())
+                {
+                    cmd.CommandText = "DELETE FROM Usuario WHERE Nome=@Nome";
+                    cmd.Prepare();
+                    AddParametro(cmd, "@Nome", nome);
+                    cmd.ExecuteNonQuery();
+                }
+                conexao.Close();
+            }
+        }
+
+        //Bloquear Usuário
+
+        public void BloquearUsuario(string Login, Usuario u)
+        {
+            using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
+            {
+                conexao.Open();
+                using (IDbCommand cmd = conexao.CreateCommand())
+                {
+                    cmd.CommandText = "update Usuario set Login=@Login, Senha=@Senha, Nome=@nome, Tipo=@tipo, CPF=@CPF where Login=@LoginAntigo";
+                    cmd.Prepare();
+                    AddParametro(cmd, "@Login", u.Login);
+                    AddParametro(cmd, "@Senha", u.Senha);
+                    AddParametro(cmd, "@Nome", u.Nome);
+                    AddParametro(cmd, "@Tipo", u.TipoB);
+                    AddParametro(cmd, "@CPF", u.CPF);
+                    AddParametro(cmd, "@LoginAntigo", Login);
+                    cmd.ExecuteNonQuery();
+                }
+                conexao.Close();
+            }
+        }
+
         /*
          * 
          * Produto

@@ -29,7 +29,7 @@ namespace ProjetoPAV
 
             if (u != null)
             {
-                if (u.Tipo == 'o')
+                if (u.TipoB == 'o')
                 {
                     // Esconder janela login
                     this.Hide();
@@ -38,7 +38,7 @@ namespace ProjetoPAV
                     venda.ShowDialog();
                     // Fechar a tela de login após fechar a tela venda
                     this.Close();
-                }else if (u.Tipo == 'a')
+                }else if (u.TipoB == 'a')
                 {
                     this.Hide();
                     TelaAdmin admin = new TelaAdmin();
