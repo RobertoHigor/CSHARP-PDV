@@ -32,14 +32,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
             this.LvwConsulta = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tbxPrecoFinal = new System.Windows.Forms.TextBox();
+            this.tbxValorPago = new System.Windows.Forms.TextBox();
+            this.tbxTroco = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -78,37 +79,14 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Troco";
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(264, 238);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 17);
-            this.listBox1.TabIndex = 12;
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(264, 317);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 17);
-            this.listBox2.TabIndex = 13;
-            // 
-            // listBox3
-            // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(264, 388);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(120, 17);
-            this.listBox3.TabIndex = 14;
-            // 
             // LvwConsulta
             // 
             this.LvwConsulta.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader4,
+            this.columnHeader5});
             this.LvwConsulta.FullRowSelect = true;
             this.LvwConsulta.GridLines = true;
             this.LvwConsulta.HideSelection = false;
@@ -138,17 +116,43 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Descricao";
-            this.columnHeader4.Width = 122;
+            this.columnHeader4.Width = 87;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Preço";
+            // 
+            // tbxPrecoFinal
+            // 
+            this.tbxPrecoFinal.Location = new System.Drawing.Point(265, 239);
+            this.tbxPrecoFinal.Name = "tbxPrecoFinal";
+            this.tbxPrecoFinal.Size = new System.Drawing.Size(100, 20);
+            this.tbxPrecoFinal.TabIndex = 20;
+            // 
+            // tbxValorPago
+            // 
+            this.tbxValorPago.Location = new System.Drawing.Point(265, 318);
+            this.tbxValorPago.Name = "tbxValorPago";
+            this.tbxValorPago.Size = new System.Drawing.Size(100, 20);
+            this.tbxValorPago.TabIndex = 21;
+            // 
+            // tbxTroco
+            // 
+            this.tbxTroco.Location = new System.Drawing.Point(265, 389);
+            this.tbxTroco.Name = "tbxTroco";
+            this.tbxTroco.Size = new System.Drawing.Size(100, 20);
+            this.tbxTroco.TabIndex = 22;
+            this.tbxTroco.TextChanged += new System.EventHandler(this.tbxTroco_TextChanged);
             // 
             // TelaFinal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(417, 450);
+            this.Controls.Add(this.tbxTroco);
+            this.Controls.Add(this.tbxValorPago);
+            this.Controls.Add(this.tbxPrecoFinal);
             this.Controls.Add(this.LvwConsulta);
-            this.Controls.Add(this.listBox3);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -167,13 +171,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.ListView LvwConsulta;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.TextBox tbxPrecoFinal;
+        private System.Windows.Forms.TextBox tbxValorPago;
+        private System.Windows.Forms.TextBox tbxTroco;
     }
 }
