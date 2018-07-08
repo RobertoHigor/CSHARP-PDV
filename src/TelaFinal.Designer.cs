@@ -41,6 +41,7 @@
             this.tbxPrecoFinal = new System.Windows.Forms.TextBox();
             this.tbxValorPago = new System.Windows.Forms.TextBox();
             this.tbxTroco = new System.Windows.Forms.TextBox();
+            this.btnFinalizar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -55,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(261, 222);
+            this.label2.Location = new System.Drawing.Point(363, 284);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 2;
@@ -64,7 +65,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(261, 301);
+            this.label3.Location = new System.Drawing.Point(363, 336);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 4;
@@ -73,7 +74,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(261, 372);
+            this.label4.Location = new System.Drawing.Point(364, 391);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 5;
@@ -92,7 +93,7 @@
             this.LvwConsulta.HideSelection = false;
             this.LvwConsulta.Location = new System.Drawing.Point(12, 25);
             this.LvwConsulta.Name = "LvwConsulta";
-            this.LvwConsulta.Size = new System.Drawing.Size(246, 404);
+            this.LvwConsulta.Size = new System.Drawing.Size(346, 404);
             this.LvwConsulta.TabIndex = 19;
             this.LvwConsulta.TileSize = new System.Drawing.Size(1, 1);
             this.LvwConsulta.UseCompatibleStateImageBehavior = false;
@@ -116,7 +117,7 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Descricao";
-            this.columnHeader4.Width = 87;
+            this.columnHeader4.Width = 160;
             // 
             // columnHeader5
             // 
@@ -124,31 +125,41 @@
             // 
             // tbxPrecoFinal
             // 
-            this.tbxPrecoFinal.Location = new System.Drawing.Point(265, 239);
+            this.tbxPrecoFinal.Location = new System.Drawing.Point(367, 301);
             this.tbxPrecoFinal.Name = "tbxPrecoFinal";
             this.tbxPrecoFinal.Size = new System.Drawing.Size(100, 20);
             this.tbxPrecoFinal.TabIndex = 20;
             // 
             // tbxValorPago
             // 
-            this.tbxValorPago.Location = new System.Drawing.Point(265, 318);
+            this.tbxValorPago.Location = new System.Drawing.Point(367, 353);
             this.tbxValorPago.Name = "tbxValorPago";
             this.tbxValorPago.Size = new System.Drawing.Size(100, 20);
             this.tbxValorPago.TabIndex = 21;
             // 
             // tbxTroco
             // 
-            this.tbxTroco.Location = new System.Drawing.Point(265, 389);
+            this.tbxTroco.Location = new System.Drawing.Point(367, 407);
             this.tbxTroco.Name = "tbxTroco";
             this.tbxTroco.Size = new System.Drawing.Size(100, 20);
             this.tbxTroco.TabIndex = 22;
-            this.tbxTroco.TextChanged += new System.EventHandler(this.tbxTroco_TextChanged);
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Location = new System.Drawing.Point(392, 433);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(75, 23);
+            this.btnFinalizar.TabIndex = 23;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.button1_Click);
             // 
             // TelaFinal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 450);
+            this.ClientSize = new System.Drawing.Size(479, 468);
+            this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.tbxTroco);
             this.Controls.Add(this.tbxValorPago);
             this.Controls.Add(this.tbxPrecoFinal);
@@ -159,7 +170,6 @@
             this.Controls.Add(this.label1);
             this.Name = "TelaFinal";
             this.Text = "Tela Final";
-            this.Load += new System.EventHandler(this.TelaFinal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +190,6 @@
         private System.Windows.Forms.TextBox tbxPrecoFinal;
         private System.Windows.Forms.TextBox tbxValorPago;
         private System.Windows.Forms.TextBox tbxTroco;
+        private System.Windows.Forms.Button btnFinalizar;
     }
 }

@@ -13,12 +13,22 @@ namespace ProjetoPAV.src
     public partial class TelaFinal : Form
     {
         private Produto p;
-        public TelaFinal()
+        private List<Produto> lista;
+        private int subtotal;
+        private int pago;
+
+        public TelaFinal(List<Produto> produtos, int subtotal, int pago)
         {
+            p = new Produto();
+            this.lista = produtos;
+            this.subtotal = subtotal;
+            this.pago = pago;
             InitializeComponent();
+            AtualizarTela();
+            
         }
 
-        private void tbxTroco_TextChanged(object sender, EventArgs e)
+        /*private void tbxTroco_TextChanged(object sender, EventArgs e)
         {
             Decimal valorPago = Convert.ToDecimal(tbxValorPago.Text);
             Decimal precoFinal = Convert.ToDecimal(tbxPrecoFinal.Text);
@@ -26,45 +36,43 @@ namespace ProjetoPAV.src
 
             total = valorPago - precoFinal;
             tbxTroco.Text = total.ToString();
-        }
-
-        public string Propriedade { get; set; }
-
-        private void TelaFinal_Load(object sender, EventArgs e)
-        {
-            if (!this.Propriedade.Equals(""))
-            {
-                tbxPrecoFinal.Text = this.Propriedade;
-            }            
-        }
+        }*/
 
         private void AtualizarTela()
         {
-            LvwConsulta.SuspendLayout();
-            int Linha = 1;
+            LvwConsulta.SuspendLayout();            
+            int Linha = 1;                    
+            tbxPrecoFinal.Text = subtotal.ToString();
+            tbxValorPago.Text = pago.ToString();
+            tbxTroco.Text = (pago - subtotal).ToString();
+
             LvwConsulta.Items.Clear();
-            foreach (Produto p in p.ObterProdutos())
+            foreach (Produto p in lista)
             {
 
-                    ListViewItem item = new ListViewItem
-                    {
-                        Text = Linha.ToString(),
-                        Tag = p
-                    };                  
+                ListViewItem item = new ListViewItem
+                {
+                    Text = Linha.ToString(),
+                    Tag = p
+                };
 
-                    item.SubItems.Add(p.CodProduto.ToString());
-                    item.SubItems.Add(p.Nome);
-                    item.SubItems.Add(p.Descricao);
-                    item.SubItems.Add(p.Quantidade.ToString());
-                    item.SubItems.Add(p.Preco.ToString());
-
-                    Linha++;
-                    LvwConsulta.Items.Add(item);
+                item.SubItems.Add(p.CodProduto.ToString());
+                item.SubItems.Add(p.Nome);
+                item.SubItems.Add(p.Descricao);
+                item.SubItems.Add(p.Preco.ToString());
+                item.SubItems.Add(p.Quantidade.ToString());
                 
 
-                LvwConsulta.ResumeLayout();
-
+                Linha++;
+                LvwConsulta.Items.Add(item);
             }
+                LvwConsulta.ResumeLayout();         
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            p.InserirProdutos(lista, "OperadorTeste");
+            this.Hide();
         }
     }
 }

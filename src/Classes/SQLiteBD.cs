@@ -236,6 +236,35 @@ namespace ProjetoPAV
             return L;
         }
 
+        public Produto ObterProduto(int codProduto)
+        {
+            Produto p = null;
+            using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
+            {
+                conexao.Open();
+                using (IDbCommand cmd = conexao.CreateCommand())
+                {
+                    cmd.CommandText = "select codProduto, nome, descricao, preco, quantidade from Produto where codProduto=@codProduto";
+                    cmd.Prepare();
+                    AddParametro(cmd, "@codProduto", codProduto);
+                    IDataReader r = cmd.ExecuteReader();
+                    while (r.Read())
+                    {
+                        p = new Produto
+                        {
+                            CodProduto = r.GetInt32(0),
+                            Nome = r.GetString(1),
+                            Descricao = r.GetString(2),
+                            Preco = r.GetFloat(3),
+                            Quantidade = r.GetInt32(4)
+                        };                        
+                    }
+                }
+                conexao.Close();
+            }
+            return p;
+        }
+
         // Remover produto
         public void RemoverProduto(int CodProduto)
         {
@@ -291,6 +320,29 @@ namespace ProjetoPAV
                     AddParametro(cmd, "@Preco", p.Preco);
                     AddParametro(cmd, "@Quantidade", p.Quantidade);
                     cmd.ExecuteNonQuery();
+                }
+                conexao.Close();
+            }
+        }
+
+        public void InserirProdutos(List<Produto> produtos, String login)
+        {            
+            using (IDbConnection conexao = new SQLiteConnection(STR_CONEXAO))
+            {                
+                conexao.Open();
+                foreach (Produto p in produtos)
+                {                
+                    using (IDbCommand cmd = conexao.CreateCommand())
+                    {                   
+                        cmd.CommandText = "insert into Pedido values (null, @Login, @CodProduto, @Quantidade)";
+                        cmd.Prepare();
+
+                        AddParametro(cmd, "@Login", login);
+                        AddParametro(cmd, "@CodProduto", p.CodProduto);                        
+                        AddParametro(cmd, "@Quantidade", p.Quantidade);
+
+                        cmd.ExecuteNonQuery();
+                    }
                 }
                 conexao.Close();
             }

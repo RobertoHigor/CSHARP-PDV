@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCodProduto = new System.Windows.Forms.TextBox();
             this.btnConsultarProduto = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -37,7 +36,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnRemoverProduto = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
@@ -47,6 +45,12 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tbxCodProduto = new System.Windows.Forms.NumericUpDown();
+            this.txtQuantidade = new System.Windows.Forms.NumericUpDown();
+            this.tbxPago = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.tbxCodProduto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQuantidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbxPago)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -57,13 +61,6 @@
             this.label1.Size = new System.Drawing.Size(94, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Codigo do produto";
-            // 
-            // txtCodProduto
-            // 
-            this.txtCodProduto.Location = new System.Drawing.Point(8, 44);
-            this.txtCodProduto.Name = "txtCodProduto";
-            this.txtCodProduto.Size = new System.Drawing.Size(98, 20);
-            this.txtCodProduto.TabIndex = 2;
             // 
             // btnConsultarProduto
             // 
@@ -100,6 +97,7 @@
             // 
             this.txtValorUnidade.Location = new System.Drawing.Point(88, 189);
             this.txtValorUnidade.Name = "txtValorUnidade";
+            this.txtValorUnidade.ReadOnly = true;
             this.txtValorUnidade.Size = new System.Drawing.Size(100, 20);
             this.txtValorUnidade.TabIndex = 10;
             // 
@@ -116,6 +114,7 @@
             // 
             this.txtSubTotal.Location = new System.Drawing.Point(555, 359);
             this.txtSubTotal.Name = "txtSubTotal";
+            this.txtSubTotal.ReadOnly = true;
             this.txtSubTotal.Size = new System.Drawing.Size(107, 20);
             this.txtSubTotal.TabIndex = 12;
             // 
@@ -127,14 +126,6 @@
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 13;
             this.label5.Text = "Quantidade";
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.Location = new System.Drawing.Point(88, 216);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(100, 20);
-            this.txtQuantidade.TabIndex = 14;
-            this.txtQuantidade.Text = "1";
             // 
             // label6
             // 
@@ -211,16 +202,59 @@
             // 
             this.columnHeader1.Text = "Preço";
             // 
+            // tbxCodProduto
+            // 
+            this.tbxCodProduto.Location = new System.Drawing.Point(8, 44);
+            this.tbxCodProduto.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.tbxCodProduto.Name = "tbxCodProduto";
+            this.tbxCodProduto.Size = new System.Drawing.Size(105, 20);
+            this.tbxCodProduto.TabIndex = 20;
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Location = new System.Drawing.Point(88, 217);
+            this.txtQuantidade.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(105, 20);
+            this.txtQuantidade.TabIndex = 21;
+            this.txtQuantidade.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // tbxPago
+            // 
+            this.tbxPago.Location = new System.Drawing.Point(327, 357);
+            this.tbxPago.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.tbxPago.Name = "tbxPago";
+            this.tbxPago.Size = new System.Drawing.Size(105, 20);
+            this.tbxPago.TabIndex = 22;
+            // 
             // TelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 397);
+            this.Controls.Add(this.tbxPago);
+            this.Controls.Add(this.txtQuantidade);
+            this.Controls.Add(this.tbxCodProduto);
             this.Controls.Add(this.LvwConsulta);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.btnRemoverProduto);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtQuantidade);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtSubTotal);
             this.Controls.Add(this.label4);
@@ -228,10 +262,13 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnConsultarProduto);
-            this.Controls.Add(this.txtCodProduto);
             this.Controls.Add(this.label1);
             this.Name = "TelaVenda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela de Venda";
+            ((System.ComponentModel.ISupportInitialize)(this.tbxCodProduto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQuantidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbxPago)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,14 +277,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCodProduto;
         private System.Windows.Forms.Button btnConsultarProduto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtValorUnidade;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnRemoverProduto;
         private System.Windows.Forms.Button btnAdicionar;
@@ -258,5 +293,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         public System.Windows.Forms.TextBox txtSubTotal;
+        private System.Windows.Forms.NumericUpDown tbxCodProduto;
+        private System.Windows.Forms.NumericUpDown txtQuantidade;
+        private System.Windows.Forms.NumericUpDown tbxPago;
     }
 }

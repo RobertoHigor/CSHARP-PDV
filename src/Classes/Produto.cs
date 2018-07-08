@@ -43,9 +43,19 @@ namespace ProjetoPAV.src.Classes
             bd.RemoverProduto(codProduto);
         }
 
+        public Produto ObterProduto(int codProduto)
+        {
+            return bd.ObterProduto(codProduto);
+        }
+
         public void Inserir(Produto ficha)
         {
             bd.InserirProduto(ficha);
+        }
+
+        public void InserirProdutos(List<Produto> lista, String login)
+        {
+            bd.InserirProdutos(lista, login);
         }
     }
 }

@@ -60,6 +60,7 @@
             this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.button1);
             this.Name = "TelaInicial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela Inicial";
             this.ResumeLayout(false);
 
