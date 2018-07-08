@@ -33,7 +33,7 @@
             this.btnConsultarProduto = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.txtValorUnidade = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,6 +46,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -72,7 +73,7 @@
             this.btnConsultarProduto.TabIndex = 3;
             this.btnConsultarProduto.Text = "Consultar produto";
             this.btnConsultarProduto.UseVisualStyleBackColor = true;
-            this.btnConsultarProduto.Click += new System.EventHandler(this.button1_Click);
+            this.btnConsultarProduto.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label3
             // 
@@ -93,14 +94,14 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Confirmar compra";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // txtTotal
+            // txtValorUnidade
             // 
-            this.txtTotal.Location = new System.Drawing.Point(88, 189);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(100, 20);
-            this.txtTotal.TabIndex = 10;
-            this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
+            this.txtValorUnidade.Location = new System.Drawing.Point(88, 189);
+            this.txtValorUnidade.Name = "txtValorUnidade";
+            this.txtValorUnidade.Size = new System.Drawing.Size(100, 20);
+            this.txtValorUnidade.TabIndex = 10;
             // 
             // label4
             // 
@@ -155,7 +156,7 @@
             this.btnRemoverProduto.TabIndex = 16;
             this.btnRemoverProduto.Text = "Remover produto";
             this.btnRemoverProduto.UseVisualStyleBackColor = false;
-            this.btnRemoverProduto.Click += new System.EventHandler(this.button3_Click);
+            this.btnRemoverProduto.Click += new System.EventHandler(this.Button3_Click);
             // 
             // btnAdicionar
             // 
@@ -165,7 +166,7 @@
             this.btnAdicionar.TabIndex = 18;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
-            this.btnAdicionar.Click += new System.EventHandler(this.button4_Click);
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // LvwConsulta
             // 
@@ -173,7 +174,8 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader6,
+            this.columnHeader1});
             this.LvwConsulta.FullRowSelect = true;
             this.LvwConsulta.GridLines = true;
             this.LvwConsulta.HideSelection = false;
@@ -184,7 +186,6 @@
             this.LvwConsulta.TileSize = new System.Drawing.Size(1, 1);
             this.LvwConsulta.UseCompatibleStateImageBehavior = false;
             this.LvwConsulta.View = System.Windows.Forms.View.Details;
-            this.LvwConsulta.SelectedIndexChanged += new System.EventHandler(this.LvwConsulta_SelectedIndexChanged);
             // 
             // columnHeader3
             // 
@@ -204,7 +205,11 @@
             // columnHeader6
             // 
             this.columnHeader6.Text = "Descricao";
-            this.columnHeader6.Width = 269;
+            this.columnHeader6.Width = 220;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Preço";
             // 
             // TelaVenda
             // 
@@ -219,7 +224,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtSubTotal);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.txtValorUnidade);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnConsultarProduto);
@@ -239,9 +244,8 @@
         private System.Windows.Forms.Button btnConsultarProduto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.TextBox txtValorUnidade;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtSubTotal;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label label6;
@@ -252,5 +256,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        public System.Windows.Forms.TextBox txtSubTotal;
     }
 }

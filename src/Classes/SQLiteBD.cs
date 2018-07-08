@@ -9,6 +9,8 @@ namespace ProjetoPAV
     public class SQLiteBD
     {
         private const string STR_CONEXAO = "Data Source=dados.bd;Version=3";
+        private string _StrConexao;
+
         public SQLiteBD()
         {
             if (!System.IO.File.Exists("dados.bd"))
@@ -292,6 +294,6 @@ namespace ProjetoPAV
                 }
                 conexao.Close();
             }
-        }       
+        }
     }
 }
