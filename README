@@ -1,31 +1,31 @@
-Trabalho
+# Trabalho
 
 Fazer um PDV (Ponto de Venda) para super mercados.
-Neste programa teremos 3 modos de operaÁao, de acordo com o perfil
-dos usu·rios. (Gerente, Administrador e Operador)
+Neste programa teremos 3 modos de opera√ßao, de acordo com o perfil
+dos usu√°rios. (Gerente, Administrador e Operador)
 
-Modulo 1 - Administrador
-   neste modulo o usuario poder· realizar as seguintes operaÁıes
+## Modulo 1 - Administrador
+   neste modulo o usuario poder√° realizar as seguintes opera√ß√µes
    1. Listar,Filtrar/Pesquisar, Inserir, Alterar, Remover, TrocarSenha e Bloquear Usuarios
        Dados dos usuarios (Nome, CPF, Login, Senha e Perfil)
    2. Listar,Filtrar/Pesquisar, Inserir, Alterar, Remover Produtos
-       Dados dos produtos (Codigo inteiro, nome, descriÁao, foto, preÁo)
+       Dados dos produtos (Codigo inteiro, nome, descri√ßao, foto, pre√ßo)
 
-Modulo 2 - Operador
+## Modulo 2 - Operador
    Este modulo serve para realizar as passagens dos produtos de um cliente.
-   para isso, este modulo ter· 4 telas
+   para isso, este modulo ter√° 4 telas
    
-   1. Tela inicial - fica somente com os botıes de iniciar venda e consultar produto
-   2. Tela Final - nesta tela temos a listagem dos produtos comprados, com o preÁo final, o valor pago pelo cliente  e o valor do troco.
-   3. Tela de consultar produto - neste tela o usuario digita parte do nome, ou do codigo, ou da descricao e os produtos ser„o filtrados
-      obs: esta tela pode ser a mesma usada no modulo 1, desde que nao permita fazer alteraÁoes.
-   4. Tela venda - Ao iniciar venda, esta ser· apresentada esta tela, onde teremos uma caixa de texto permitindo a digitaÁao do codigo do produto, ou clicar no botao para chamar a tela de pesquisa de produto, que retornar· o codigo do mesmo.
-        ao indicar o produto, deve aparecer uma foto, bem como o valor unitario, e deve permitir digitar a quantidade, que por padrao vir· como 1.
-        confirmando o produto, o sistema ir· inseri-lo na lista de produtos, a qualquer momento o produto pode ser removido.
+   1. Tela inicial - fica somente com os bot√µes de iniciar venda e consultar produto
+   2. Tela Final - nesta tela temos a listagem dos produtos comprados, com o pre√ßo final, o valor pago pelo cliente  e o valor do troco.
+   3. Tela de consultar produto - neste tela o usuario digita parte do nome, ou do codigo, ou da descricao e os produtos ser√£o filtrados
+      obs: esta tela pode ser a mesma usada no modulo 1, desde que nao permita fazer altera√ßoes.
+   4. Tela venda - Ao iniciar venda, esta ser√° apresentada esta tela, onde teremos uma caixa de texto permitindo a digita√ßao do codigo do produto, ou clicar no botao para chamar a tela de pesquisa de produto, que retornar√° o codigo do mesmo.
+        ao indicar o produto, deve aparecer uma foto, bem como o valor unitario, e deve permitir digitar a quantidade, que por padrao vir√° como 1.
+        confirmando o produto, o sistema ir√° inseri-lo na lista de produtos, a qualquer momento o produto pode ser removido.
         nesta mesma tela deve ser apresentado os produtos da lista de compra, bem como o sub-total.
 	    
-Modulo 3 - Gerente
-    este modulo serve para acompanhar o bom andamento do negocio, atravÈs dos seguintes relatÛrios:
+## Modulo 3 - Gerente
+    este modulo serve para acompanhar o bom andamento do negocio, atrav√©s dos seguintes relat√≥rios:
     1. os 10 Produtos mais vendidos em um intervalo de tempo dado
     2. a lista de operadores e a quantidade de cancelamentos realizados pelo operador ordenados decrescentemente
     3. Tempo Medio de venda por quantidade, e mostrando por operador o menor tempo por quantidade e o de maior tempo por quantidade     
@@ -34,18 +34,18 @@ Modulo 3 - Gerente
        na ultima linha temos o somatorio de cada coluna.
    
 
-Regras:
+# Regras:
 mandar por email:mozar.silva@gmail.com
 assunto: trab ist 2018 01 pav
 corpo do email deve ter o nome dos integrantes do trabalho
-ate dia 06 de julho de 2018 atÈ as 23:59 :)
+ate dia 06 de julho de 2018 at√© as 23:59 :)
 grupo de no maximo 3 pessoas.
-trabalhos iguais ter„o a nota final dividida pelo numero de grupos.
-grupos com mais de 3 pessoas, ser„o considerados como x grupos de 3. ou seja ser„o subdivididos em grupos de 3. a nota final sera dividida pelo numero de subgrupos de 3
+trabalhos iguais ter√£o a nota final dividida pelo numero de grupos.
+grupos com mais de 3 pessoas, ser√£o considerados como x grupos de 3. ou seja ser√£o subdivididos em grupos de 3. a nota final sera dividida pelo numero de subgrupos de 3
 
 
-Pontuacao:
-   1. inserir, remover, buscar e listar usu·rios 				1,5
+# Pontuacao:
+   1. inserir, remover, buscar e listar usu√°rios 				1,5
    2. inserir, remover, buscar e listar produtos 				1,5
    3. tela de login  								0,5
    4. tela de splash								0,5
@@ -63,6 +63,6 @@ Pontuacao:
    16.usar arquivo para importar e exportar os produtos				1.0
    17.guardar as imagens no banco de dados 					1.0
                                                                                18.0
-obs: para qualquer ponto ser validado, pelo menos o item 2 deve estar ok
+## obs: para qualquer ponto ser validado, pelo menos o item 2 deve estar ok
      e o sistema deve ser consistente.
  
